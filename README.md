@@ -1,4 +1,14 @@
-# Astaghfirullah Tasbih — Android Studio project
+# Tasbih تسبیح v2 — Android Studio project
+
+## What's new in v2
+- 25 azkar (SubhanAllahi wa bihamdihi, SubhanAllahil Azeem, Allahumma salli ala Muhammad, La hawla wa la quwwata illa billah, Hasbunallah, Dua Yunus, Kalima, Tahlil and more), each with Arabic, transliteration, English and Urdu meaning.
+- 10 bead designs and 10 scenes.
+- 19 bead colour options (Multicolour is the default), plus manual colour pickers (1, 2 or 3 colour patterns).
+- Counter shows English and Urdu numerals (12 / ۱۲), with rounds and total.
+- Targets: 33, 99, 100, 313, 500, 1000. Auto-count speed: slow / medium / fast.
+- Install button (PWA install in a browser; PWA files `manifest.webmanifest` + `sw.js` are included), settings are remembered.
+- Uses the VIBRATE permission for tap haptics.
+
 
 This project wraps the supplied `Astaghfirullah Tasbih` HTML experience in a lightweight Android WebView app. The HTML is bundled locally, so the main app experience does not require a hosted website. The original HTML requests Google Fonts from the internet; if offline, device/system fallback fonts are used.
 
@@ -15,7 +25,7 @@ This project wraps the supplied `Astaghfirullah Tasbih` HTML experience in a lig
 - Replace `com.example.astaghfirullahtasbih` with a unique permanent application ID before the first release.
 - Add a production launcher icon and store listing screenshots.
 - Test counting, controls, screen sizes, rotation behavior, and offline operation.
-- Verify the final privacy/data-safety declarations against the actual app and any third-party SDKs you add. This project currently includes no analytics or ad SDKs and requests no Android permissions.
+- Verify the final privacy/data-safety declarations against the actual app and any third-party SDKs you add. This project currently includes no analytics or ad SDKs and requests only the VIBRATE permission.
 - Ensure you have rights to all bundled assets and fonts. The supplied HTML references Google Fonts online.
 - New Google Play apps and updates must target API 36 or higher starting August 31, 2026. Check Play Console for current policies before submitting.
 
