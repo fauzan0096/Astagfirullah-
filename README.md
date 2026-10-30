@@ -13,5 +13,5 @@ Android Studio: run `bash setup.sh`, then open the folder.
 Web only: host index.html + install.js + manifest.webmanifest + sw.js + app-icon-*.png together.
 
 v6: Reel studio (panel top): Reel mode, 4 video scenes (Flower jar, Sky lanterns, Noor tree, Moon galaxy), Record video (saves 1080x1920 mp4/webm), Channel name watermark.
-v6.1: +3 scenes (Lotus mandala, Firefly night, Ring of light), faster tree/moon, Quick video (~20s for 33).
+v6.1: +3 scenes (Lotus mandala, Firefly night, Butterfly meadow), faster tree/moon, Quick video (~20s for 33).
 v7: top reset button (hidden while recording), Android video saving to Movies/Tasbih, in-page channel name box.
