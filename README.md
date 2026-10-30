@@ -11,3 +11,5 @@ Every file sits in this one folder - no sub-folders.
 Build APK: push to GitHub, run the "Build installable APK" workflow, download `Tasbih-debug-APK`.
 Android Studio: run `bash setup.sh`, then open the folder.
 Web only: host index.html + install.js + manifest.webmanifest + sw.js + app-icon-*.png together.
+
+v6: Reel studio (panel top): Reel mode, 4 video scenes (Flower jar, Sky lanterns, Noor tree, Moon galaxy), Record video (saves 1080x1920 mp4/webm), Channel name watermark.
