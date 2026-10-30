@@ -16,6 +16,6 @@ cp ic_launcher.xml $A/res/mipmap-anydpi-v26/ic_launcher_round.xml
 cp styles.xml colors.xml $A/res/values/
 cp AndroidManifest.xml $A/
 cp MainActivity.java $A/java/com/example/astaghfirullahtasbih/
-cp index.html manifest.webmanifest sw.js app-icon-512.png app-icon-maskable-512.png $A/assets/
+cp index.html install.js manifest.webmanifest sw.js app-icon-512.png app-icon-maskable-512.png $A/assets/
 cp app-build.gradle app/build.gradle
 echo "Android project layout ready."

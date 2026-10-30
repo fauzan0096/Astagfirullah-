@@ -8,6 +8,7 @@
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="app-icon-512.png">
 <link rel="apple-touch-icon" href="app-icon-512.png">
+<script src="install.js"></script>
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
@@ -87,7 +88,7 @@ canvas{position:absolute;inset:0;width:100%;height:100%}
 </div>
 <script>
 const $=id=>document.getElementById(id),st=$('stage'),cv=$('c'),ctx=cv.getContext('2d'),root=document.documentElement;
-let W,H,rain=[],stars=[],dust=[],parts=[],count=0,off=0,pulse=0,done=false,timer,last=0,fin,auto=false,autoT,running=false,fn=0;
+let PAT=null,W,H,rain=[],stars=[],dust=[],parts=[],count=0,off=0,pulse=0,done=false,timer,last=0,fin,auto=false,autoT,running=false,fn=0;
 
 /* ---------- saved settings ---------- */
 let LS=null;try{LS=window.localStorage}catch(e){}
@@ -197,7 +198,6 @@ function size(){
 }
 addEventListener('resize',size);size();
 /* ---------- professional backdrop: soft Islamic geometric lattice ---------- */
-let PAT=null;
 function buildPat(){
   const d=Math.min(devicePixelRatio||1,2),c=document.createElement('canvas');c.width=W*d;c.height=H*d;
   const x=c.getContext('2d');x.scale(d,d);
@@ -397,7 +397,6 @@ SC.forEach((s,i)=>chip('sr',s.n,()=>setScene(i)));
 function setScene(i,quiet){S.si=i;const s=SC[i];tv=s.v.slice();LY.forEach(l=>l.t=0);if(s.p!=null)LY.push({i:IM[s.p],a:0,t:1});mark('sr',i);if(!quiet)save()}
 
 let tt;function toast(en){const t=$('toast');t.textContent=en;t.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('on'),3800)}
-let dip=null;addEventListener('beforeinstallprompt',e=>{e.preventDefault();dip=e});
 const IN_APP=/TasbihApp/.test(navigator.userAgent),STANDALONE=(window.matchMedia&&matchMedia('(display-mode: standalone)').matches);
 let ob=[],rt;
 ob[0]=chip('or','Auto count',()=>setRun(!running));
@@ -407,7 +406,7 @@ ob[3]=chip('or','Reset',()=>{if(!rt){rt=setTimeout(()=>{rt=null;syncOpts()},2600
   clearTimeout(rt);rt=null;clearTimeout(fin);done=false;count=0;off=0;S.count=0;S.rounds=0;S.total=0;render();syncOpts();save()});
 ob[4]=chip('or','Install',()=>{
   if(IN_APP||STANDALONE)toast('Already installed as an app ✓');
-  else if(dip){dip.prompt();dip=null}
+  else if(window.TasbihInstall)TasbihInstall.open();
   else toast('Browser menu ⋮ → Install app / Add to Home screen')});
 function syncOpts(){ob[0].classList.toggle('on',running);ob[1].classList.toggle('on',!S.mute);ob[1].firstChild.textContent=S.mute?'Sound off':'Sound on';
   ob[2].classList.toggle('on',auto);if(!rt)ob[3].innerHTML='<span>Reset</span>'}
