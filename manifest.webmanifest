@@ -1,0 +1,14 @@
+{
+  "name": "Tasbih تسبیح",
+  "short_name": "Tasbih",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#040a14",
+  "theme_color": "#040a14",
+  "icons": [
+    {"src": "app-icons/app-icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "app-icons/app-icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ]
+}
