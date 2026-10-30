@@ -48,7 +48,7 @@ canvas{position:absolute;inset:0;width:100%;height:100%}
 .fab{position:absolute;top:2.6cqw;width:11cqw;height:11cqw;border-radius:50%;border:1px solid rgba(255,255,255,.22);background:rgba(8,16,30,.5);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:#fff;display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;z-index:5}
 .fab svg{width:50%;height:50%;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .fab.on{border-color:rgb(var(--acc));box-shadow:0 0 3cqw rgba(var(--acc),.5)}
-#bm{left:3.5cqw}
+#bm{left:0;top:0;width:22cqw;height:22cqw;border:0;border-radius:0;background:none;backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:none;outline:none;opacity:0;-webkit-tap-highlight-color:transparent}
 .panel{position:absolute;left:0;right:0;bottom:0;max-height:62%;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none;padding:3.5cqw 0 7cqw;box-sizing:border-box;background:linear-gradient(rgba(7,16,32,.9),rgba(4,10,20,.97));backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:5cqw 5cqw 0 0;border-top:1px solid rgba(255,255,255,.16);transform:translateY(104%);visibility:hidden;transition:transform .38s cubic-bezier(.2,.8,.2,1),visibility .38s;z-index:6}
 .panel::-webkit-scrollbar{display:none}
 .show .panel{transform:none;visibility:visible}
@@ -81,7 +81,7 @@ canvas{position:absolute;inset:0;width:100%;height:100%}
   </div>
   <div class="stat" id="stat"></div>
   <div class="cap" id="cap"></div>
-  <button class="fab" id="bm" aria-label="Menu"><svg viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></svg></button>
+  <button class="fab" id="bm" aria-label="Menu"></button>
   <div class="panel" id="panel"><div class="grab"></div><div id="pc"></div></div>
   <div class="toast" id="toast"></div>
   <div class="vig"></div>
