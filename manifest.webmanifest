@@ -1,14 +1,19 @@
 {
-  "name": "Tasbih تسبیح",
+  "id": "./index.html",
+  "name": "Tasbih",
   "short_name": "Tasbih",
+  "description": "A calm digital tasbih with auto-changing bead colours.",
+  "lang": "en",
+  "dir": "ltr",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#040a14",
   "theme_color": "#040a14",
+  "categories": ["lifestyle", "education"],
   "icons": [
-    {"src": "app-icons/app-icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
-    {"src": "app-icons/app-icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+    {"src": "app-icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "app-icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
   ]
 }
