@@ -2,7 +2,7 @@ package com.example.astaghfirullahtasbih;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.view.View;
+import android.view.WindowManager;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -17,6 +17,8 @@ public class MainActivity extends Activity {
         getWindow().setStatusBarColor(android.graphics.Color.rgb(4, 10, 20));
         getWindow().setNavigationBarColor(android.graphics.Color.rgb(4, 10, 20));
 
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
         webView = new WebView(this);
         webView.setBackgroundColor(android.graphics.Color.rgb(4, 10, 20));
         WebSettings settings = webView.getSettings();
@@ -24,6 +26,8 @@ public class MainActivity extends Activity {
         settings.setDomStorageEnabled(true);
         settings.setAllowFileAccess(false);
         settings.setAllowContentAccess(false);
+        settings.setMediaPlaybackRequiresUserGesture(false); // lets auto-count sounds play
+        settings.setUserAgentString(settings.getUserAgentString() + " TasbihApp");
         settings.setJavaScriptCanOpenWindowsAutomatically(false);
         settings.setSupportMultipleWindows(false);
         webView.setWebViewClient(new WebViewClient());
@@ -34,8 +38,11 @@ public class MainActivity extends Activity {
 
     @Override
     public void onBackPressed() {
-        if (webView != null && webView.canGoBack()) webView.goBack();
-        else super.onBackPressed();
+        if (webView != null) {
+            webView.evaluateJavascript("window.__back ? window.__back() : false", value -> {
+                if (!"true".equals(value)) finish();
+            });
+        } else super.onBackPressed();
     }
 
     @Override
