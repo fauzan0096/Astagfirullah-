@@ -1,5 +1,5 @@
 /* Tasbih service worker: offline-first, one flat folder */
-const CACHE = 'tasbih-v8';
+const CACHE = 'tasbih-v9';
 const CORE = ['./', 'index.html', 'manifest.webmanifest', 'install.js', 'app-icon-512.png', 'app-icon-maskable-512.png'];
 
 self.addEventListener('install', e => {
